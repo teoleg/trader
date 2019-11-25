@@ -1,0 +1,250 @@
+[2014-01-25 16:00:40.691019|140552901199840] (./dbclient) is going to connect to [10.0.1.2]
+Open conifuration file: ./IBC.ini
+[Request]: Set is [CNSI-STK,AAPL-STK]
+[2014-01-25 16:00:40.711810|140552901199840] m_id for client# 1 is 1
+[2014-01-25 16:00:45.732425|140552901199840] Timer INFRA is started
+[2014-01-25 16:00:45.732607|140552901199840] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 20
+   Call ID        : 9
+   Symbol         : AAPL
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : 94349982
+   use RTH        : 32725
+   tickType       : 233
+[2014-01-25 16:00:45.732851|140552901199840] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 23
+   Call ID        : 12
+   Symbol         : CNSI
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : 94349982
+   use RTH        : 32725
+   tickType       : 233
+[2014-01-25 16:00:45.732981|140552901199840] --------- END-------------
+[2014-01-25 16:00:45.733007|140552901199840] Q# 0, ASSIGNED ID: CALL: 9, PUT: 20
+[2014-01-25 16:00:45.733083|140552901199840] Q# 1, ASSIGNED ID: CALL: 12, PUT: 23
+[2014-01-25 16:00:45.739171|140552901199840] Writer side is opened, fd=6
+[2014-01-25 16:00:50.740444|140552901199840] Channel opened. Order's processing thread is being created
+[2014-01-25 16:00:55.741742|140552901199840] INFO: Allocated thread# 23308032
+[2014-01-25 16:01:00.742376|140552901199840] INFO: Ordering thread created #12818176
+[2014-01-25 16:01:00.742568|140552901199840] Connecting to server: 10.0.1.2:4001, SID=1
+Received server verions from TWS: 67
+[2014-01-25 16:01:02.348529|140552901199840] APP is connected
+[2014-01-25 16:01:02.469264|140552828069632] Register thread# 140552828069632 once
+[2014-01-25 16:01:02.469676|140552828069632] nextValidId - invoked, ID=3765
+[2014-01-25 16:01:02.469876|140552828069632] Set message type to:[1](REQUEST_MARKET_DATA)
+[2014-01-25 16:01:02.469962|140552828069632] Error id=-1, errorCode=2106, 
+-------------------- message from TWS --------------------
+	HMDS data farm connection is OK:ushmds
+----------------------------------------------------------
+[2014-01-25 16:01:02.470013|140552828069632] Send Request Market Data...
+[2014-01-25 16:01:02.470071|140552828069632] Q# 0 ASSIGNED ID: SYM(AAPL):0.00 call:9, put:20
+[2014-01-25 16:01:02.471144|140552828069632] Q# 1 ASSIGNED ID: SYM(CNSI):0.00 call:12, put:23
+triggered: [1101]
+[2014-01-25 16:02:09.260725|140552817579776] Register thread# 140552817579776 once
+[2014-01-25 16:02:09.260881|140552817579776] Prepare to place a new Order ExtId=1101
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 1101 LIMIT 1]
+[2014-01-25 16:02:09.283863|140552817579776] Placing Order[3765:AAPL:SMART:STK:BUY:550.50:Qty(1)]
+[2014-01-25 16:02:09.471666|140552817579776] After update_record [s_id=1101,oid=3765]
+[2014-01-25 16:02:09.482878|140552817579776] Start Timer for QID = [3765]
+[2014-01-25 16:02:09.483264|140552817579776] Start timer TID=1, interval=30
+[2014-01-25 16:02:09.484030|140552817579776] Moving record to pending_orders....EID=1101
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=1101;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=1101;]
+[2014-01-25 16:02:39.483580|140552901191424] Register thread# 140552901191424 once
+[2014-01-25 16:02:39.494905|140552901191424] Execute 'cancelOrder' for qid=[3765]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3765 LIMIT 1]
+[2014-01-25 16:02:39.503915|140552901191424] in Comp_Order: OID=3765, size=39
+[2014-01-25 16:02:39.524549|140552901191424] Stop Timer Now.. ID=1
+[2014-01-25 16:02:39.524667|140552901191424] - In compleation function orderType is set to: BUY
+[2014-01-25 16:02:39.524766|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3765;]
+[2014-01-25 16:02:39.661798|140552828069632] Error id=3765, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3765;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3765;]
+[2014-01-25 16:02:39.689841|140552901191424] Pending entry has been removed for order_id [3765]
+[2014-01-25 16:02:39.689969|140552901191424] Timer for QID: 0
+triggered: [201]
+[2014-01-25 16:05:46.797185|140552817579776] Prepare to place a new Order ExtId=201
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 201 LIMIT 1]
+DBA::get_rX() - Retival failed.........retry=(5)
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 201 LIMIT 1]
+[2014-01-25 16:05:47.301129|140552817579776] Placing Order[3766:AAPL:SMART:STK:BUY:550.50:Qty(1)]
+[2014-01-25 16:05:47.305145|140552817579776] After update_record [s_id=201,oid=3766]
+[2014-01-25 16:05:47.310388|140552817579776] Start Timer for QID = [3766]
+[2014-01-25 16:05:47.310525|140552817579776] Start timer TID=2, interval=30
+[2014-01-25 16:05:47.310566|140552817579776] Moving record to pending_orders....EID=201
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=201;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=201;]
+[2014-01-25 16:06:17.312389|140552901191424] Execute 'cancelOrder' for qid=[3766]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3766 LIMIT 1]
+[2014-01-25 16:06:17.329239|140552901191424] in Comp_Order: OID=3766, size=39
+[2014-01-25 16:06:17.329368|140552901191424] Stop Timer Now.. ID=2
+[2014-01-25 16:06:17.329425|140552901191424] - In compleation function orderType is set to: BUY
+[2014-01-25 16:06:17.329468|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3766;]
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3766;]
+[2014-01-25 16:06:17.401565|140552828069632] Error id=3766, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3766;]
+[2014-01-25 16:06:17.404879|140552901191424] Pending entry has been removed for order_id [3766]
+[2014-01-25 16:06:17.410912|140552901191424] Timer for QID: 0
+triggered: [202]
+[2014-01-25 16:10:58.885379|140552817579776] Prepare to place a new Order ExtId=202
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 202 LIMIT 1]
+DBA::get_rX() - Retival failed.........retry=(5)
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 202 LIMIT 1]
+[2014-01-25 16:10:59.388610|140552817579776] Placing Order[3767:AAPL:SMART:STK:SELL:550.53:Qty(1)]
+[2014-01-25 16:10:59.410783|140552817579776] After update_record [s_id=202,oid=3767]
+[2014-01-25 16:10:59.417342|140552817579776] Start Timer for QID = [3767]
+[2014-01-25 16:10:59.417551|140552817579776] Start timer TID=3, interval=30
+[2014-01-25 16:10:59.417633|140552817579776] Moving record to pending_orders....EID=202
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=202;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=202;]
+[2014-01-25 16:11:29.417793|140552901191424] Execute 'cancelOrder' for qid=[3767]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3767 LIMIT 1]
+[2014-01-25 16:11:29.418838|140552901191424] in Comp_Order: OID=3767, size=39
+[2014-01-25 16:11:29.418915|140552901191424] Stop Timer Now.. ID=3
+[2014-01-25 16:11:29.419369|140552901191424] - In compleation function orderType is set to: SELL
+[2014-01-25 16:11:29.419426|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3767;]
+[2014-01-25 16:11:29.479939|140552828069632] Error id=3767, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3767;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3767;]
+[2014-01-25 16:11:29.492098|140552901191424] Pending entry has been removed for order_id [3767]
+DBA::place_order()[
+INSERT INTO trade_data.orders_queue(id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (65000,'AAPL','STK','1','USD',0,'SELL',1,'MKT','GTC','TRUE','20140114 09:59:00','20160114 15:59:00',550.53,10,60,200,9);
+]
+triggered: [65000]
+[2014-01-25 16:11:29.527755|140552817579776] Prepare to place a new Order ExtId=65000
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 65000 LIMIT 1]
+[2014-01-25 16:11:29.528553|140552817579776] Placing Order[3768:AAPL:SMART:STK:SELL:550.53:Qty(1)]
+[2014-01-25 16:11:29.574355|140552901191424] Placed market sell order to cancel SELL transaction
+[2014-01-25 16:11:29.574484|140552901191424] Timer for QID: 0
+[2014-01-25 16:11:29.596835|140552817579776] After update_record [s_id=65000,oid=3768]
+[2014-01-25 16:11:29.601467|140552817579776] Start Timer for QID = [3768]
+[2014-01-25 16:11:29.601602|140552817579776] Start timer TID=4, interval=60
+[2014-01-25 16:11:29.601642|140552817579776] Moving record to pending_orders....EID=65000
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=65000;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=65000;]
+[2014-01-25 16:12:29.601831|140552901191424] Execute 'cancelOrder' for qid=[3768]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3768 LIMIT 1]
+[2014-01-25 16:12:29.603018|140552901191424] in Comp_Order: OID=3768, size=39
+[2014-01-25 16:12:29.603095|140552901191424] Stop Timer Now.. ID=4
+[2014-01-25 16:12:29.603143|140552901191424] - In compleation function orderType is set to: SELL
+[2014-01-25 16:12:29.603185|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3768;]
+[2014-01-25 16:12:29.700158|140552828069632] Error id=3768, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3768;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3768;]
+[2014-01-25 16:12:29.773483|140552901191424] Pending entry has been removed for order_id [3768]
+[2014-01-25 16:12:29.773818|140552901191424] Timer for QID: 0
+triggered: [203]
+[2014-01-25 16:22:03.227077|140552817579776] Prepare to place a new Order ExtId=203
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 203 LIMIT 1]
+DBA::get_rX() - Retival failed.........retry=(5)
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 203 LIMIT 1]
+[2014-01-25 16:22:03.731843|140552817579776] Placing Order[3769:AAPL:SMART:STK:BUY:550.00:Qty(1)]
+[2014-01-25 16:22:03.734757|140552817579776] After update_record [s_id=203,oid=3769]
+[2014-01-25 16:22:03.738992|140552817579776] Start Timer for QID = [3769]
+[2014-01-25 16:22:03.739716|140552817579776] Start timer TID=5, interval=30
+[2014-01-25 16:22:03.739854|140552817579776] Moving record to pending_orders....EID=203
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=203;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=203;]
+[2014-01-25 16:22:33.739583|140552901191424] Execute 'cancelOrder' for qid=[3769]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3769 LIMIT 1]
+[2014-01-25 16:22:33.740934|140552901191424] in Comp_Order: OID=3769, size=39
+[2014-01-25 16:22:33.741032|140552901191424] Stop Timer Now.. ID=5
+[2014-01-25 16:22:33.741107|140552901191424] - In compleation function orderType is set to: BUY
+[2014-01-25 16:22:33.741152|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3769;]
+[2014-01-25 16:22:33.806522|140552828069632] Error id=3769, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3769;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3769;]
+[2014-01-25 16:22:33.855974|140552901191424] Pending entry has been removed for order_id [3769]
+[2014-01-25 16:22:33.856128|140552901191424] Timer for QID: 0
+triggered: [204]
+[2014-01-25 16:22:34.007458|140552817579776] Prepare to place a new Order ExtId=204
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 204 LIMIT 1]
+DBA::get_rX() - Retival failed.........retry=(5)
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 204 LIMIT 1]
+[2014-01-25 16:22:34.511834|140552817579776] Placing Order[3770:AAPL:SMART:STK:SELL:550.03:Qty(1)]
+[2014-01-25 16:22:34.539732|140552817579776] After update_record [s_id=204,oid=3770]
+[2014-01-25 16:22:34.543877|140552817579776] Start Timer for QID = [3770]
+[2014-01-25 16:22:34.544080|140552817579776] Start timer TID=6, interval=30
+[2014-01-25 16:22:34.544162|140552817579776] Moving record to pending_orders....EID=204
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=204;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=204;]
+[2014-01-25 16:23:04.545360|140552901191424] Execute 'cancelOrder' for qid=[3770]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3770 LIMIT 1]
+[2014-01-25 16:23:04.546876|140552901191424] in Comp_Order: OID=3770, size=39
+[2014-01-25 16:23:04.547181|140552901191424] Stop Timer Now.. ID=6
+[2014-01-25 16:23:04.547430|140552901191424] - In compleation function orderType is set to: SELL
+[2014-01-25 16:23:04.547579|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3770;]
+[2014-01-25 16:23:04.595878|140552828069632] Error id=3770, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3770;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3770;]
+[2014-01-25 16:23:04.661110|140552901191424] Pending entry has been removed for order_id [3770]
+DBA::place_order()[
+INSERT INTO trade_data.orders_queue(id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (64999,'AAPL','STK','1','USD',0,'SELL',1,'MKT','GTC','TRUE','20140114 09:59:00','20160114 15:59:00',550.03,10,60,200,9);
+]
+triggered: [64999]
+[2014-01-25 16:23:04.662662|140552817579776] Prepare to place a new Order ExtId=64999
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 64999 LIMIT 1]
+[2014-01-25 16:23:04.667554|140552901191424] Placed market sell order to cancel SELL transaction
+[2014-01-25 16:23:04.667680|140552901191424] Timer for QID: 0
+[2014-01-25 16:23:04.668198|140552817579776] Placing Order[3771:AAPL:SMART:STK:SELL:550.03:Qty(1)]
+[2014-01-25 16:23:04.682677|140552817579776] After update_record [s_id=64999,oid=3771]
+[2014-01-25 16:23:04.689676|140552817579776] Start Timer for QID = [3771]
+[2014-01-25 16:23:04.689858|140552817579776] Start timer TID=7, interval=60
+[2014-01-25 16:23:04.689901|140552817579776] Moving record to pending_orders....EID=64999
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=64999;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=64999;]
+[2014-01-25 16:24:04.690865|140552901191424] Execute 'cancelOrder' for qid=[3771]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3771 LIMIT 1]
+[2014-01-25 16:24:04.692397|140552901191424] in Comp_Order: OID=3771, size=39
+[2014-01-25 16:24:04.693343|140552901191424] Stop Timer Now.. ID=7
+[2014-01-25 16:24:04.693484|140552901191424] - In compleation function orderType is set to: SELL
+[2014-01-25 16:24:04.693805|140552901191424] Ticker ID in the record = 9
+move_record 1st: [INSERT INTO trade_data.complete_orders SELECT * FROM trade_data.pending_orders WHERE orderId=3771;]
+move_record 2nd: [UPDATE trade_data.complete_orders SET exec_status='C' WHERE orderId=3771;]
+move_record 3rd: [DELETE FROM trade_data.pending_orders WHERE orderId=3771;]
+[2014-01-25 16:24:04.754501|140552901191424] Pending entry has been removed for order_id [3771]
+[2014-01-25 16:24:04.754699|140552901191424] Timer for QID: 0
+[2014-01-25 16:24:04.795365|140552828069632] Error id=3771, errorCode=202, 
+-------------------- message from TWS --------------------
+	Order Canceled - reason:
+----------------------------------------------------------
+[2014-01-25 16:27:42.848947|140552828069632] Error id=-1, errorCode=1100, 
+-------------------- message from TWS --------------------
+	Connectivity between IB and Trader Workstation has been lost.
+----------------------------------------------------------
+[2014-01-25 16:27:42.849204|140552828069632] Call Disconnect on a client socket
+[2014-01-25 16:27:42.849601|140552828069632] Disconnected

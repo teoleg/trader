@@ -1,0 +1,14 @@
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (200, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (201, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (202, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (203, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (204, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (205, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);
+INSERT INTO `trade_data`.`orders_queue` (id, `symbol`, `secType`, `multiplier`, `currency`, `clientId`, `action`, `totalQuantity`, `orderType`, `tif`, `transmit`, `goodAfterTime`, `goodTillDate`, `lmtPrice`, `minQty`, `cancelInterval`, `nEvents`, ticker_id) VALUES (206, 'CNSI', 'STK', 1, 'USD', 0, 'BUY', 4, 'LMT', 'GTK', 'TRUE', '20160112 09:59:00', '20160112 15:59:00', 40.00 , 2, 30, 2 , 12);
+SLEEP(1);

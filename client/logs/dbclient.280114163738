@@ -1,0 +1,37 @@
+[2014-01-28 16:37:38.875712|140397230954464] (./dbclient) is going to connect to [10.0.1.2]
+Open conifuration file: ./IBC.ini
+[Request]: Set is [CNSI-STK,AAPL-STK]
+[2014-01-28 16:37:38.887343|140397230954464] m_id for client# 1 is 1
+[2014-01-28 16:37:43.916213|140397230954464] Timer INFRA is started
+[2014-01-28 16:37:43.916375|140397230954464] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 20
+   Call ID        : 9
+   Symbol         : AAPL
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -957072738
+   use RTH        : 32688
+   tickType       : 233
+[2014-01-28 16:37:43.916684|140397230954464] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 23
+   Call ID        : 12
+   Symbol         : CNSI
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -957072738
+   use RTH        : 32688
+   tickType       : 233
+[2014-01-28 16:37:43.916849|140397230954464] --------- END-------------
+[2014-01-28 16:37:43.916879|140397230954464] Q# 0, ASSIGNED ID: CALL: 9, PUT: 20
+[2014-01-28 16:37:43.916908|140397230954464] Q# 1, ASSIGNED ID: CALL: 12, PUT: 23
+[2014-01-28 16:37:43.924458|140397230954464] Writer side is opened, fd=6
+[2014-01-28 16:37:48.925889|140397230954464] Channel opened. Order's processing thread is being created
+[2014-01-28 16:37:53.932742|140397230954464] INFO: Allocated thread# -1028114688

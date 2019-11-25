@@ -1,0 +1,35 @@
+[2014-01-29 10:05:40.934055|140356461389792] (./dbclient) is going to connect to [10.0.1.2]
+Open conifuration file: ./IBC.ini
+[Request]: Set is [CNSI-STK,AAPL-STK]
+[2014-01-29 10:05:40.944976|140356461389792] m_id for client# 1 is 1
+[2014-01-29 10:05:45.966841|140356461389792] Timer INFRA is started
+[2014-01-29 10:05:45.967037|140356461389792] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 20
+   Call ID        : 9
+   Symbol         : AAPL
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : 1223035550
+   use RTH        : 32679
+   tickType       : 233
+[2014-01-29 10:05:45.967232|140356461389792] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 23
+   Call ID        : 12
+   Symbol         : CNSI
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : 1223035550
+   use RTH        : 32679
+   tickType       : 233
+[2014-01-29 10:05:45.967397|140356461389792] --------- END-------------
+[2014-01-29 10:05:45.967420|140356461389792] Q# 0, ASSIGNED ID: CALL: 9, PUT: 20
+[2014-01-29 10:05:45.967442|140356461389792] Q# 1, ASSIGNED ID: CALL: 12, PUT: 23
+[2014-01-29 10:05:45.969285|140356461389792] Writer side is opened, fd=6

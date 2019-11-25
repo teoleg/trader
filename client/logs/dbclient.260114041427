@@ -1,0 +1,55 @@
+[2014-01-26 04:14:27.881762|140126983735264] (./dbclient) is going to connect to [10.0.1.2]
+Open conifuration file: ./IBC.ini
+[Request]: Set is [CNSI-STK,AAPL-STK]
+[2014-01-26 04:14:27.897300|140126983735264] m_id for client# 1 is 1
+[2014-01-26 04:14:32.932875|140126983735264] Timer INFRA is started
+[2014-01-26 04:14:32.933039|140126983735264] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 20
+   Call ID        : 9
+   Symbol         : AAPL
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -621352290
+   use RTH        : 32625
+   tickType       : 233
+[2014-01-26 04:14:32.933244|140126983735264] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 23
+   Call ID        : 12
+   Symbol         : CNSI
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -621352290
+   use RTH        : 32625
+   tickType       : 233
+[2014-01-26 04:14:32.933351|140126983735264] --------- END-------------
+[2014-01-26 04:14:32.933373|140126983735264] Q# 0, ASSIGNED ID: CALL: 9, PUT: 20
+[2014-01-26 04:14:32.933396|140126983735264] Q# 1, ASSIGNED ID: CALL: 12, PUT: 23
+[2014-01-26 04:14:32.937059|140126983735264] Writer side is opened, fd=6
+[2014-01-26 04:14:37.938467|140126983735264] Channel opened. Order's processing thread is being created
+[2014-01-26 04:14:42.940397|140126983735264] INFO: Allocated thread# -692394240
+[2014-01-26 04:14:47.941761|140126983735264] INFO: Ordering thread created #-702884096
+[2014-01-26 04:14:47.949538|140126983735264] Connecting to server: 10.0.1.2:4001, SID=1
+Received server verions from TWS: 67
+[2014-01-26 04:14:48.948454|140126983735264] APP is connected
+[2014-01-26 04:14:48.995595|140126910605056] Register thread# 140126910605056 once
+[2014-01-26 04:14:49.000018|140126910605056] nextValidId - invoked, ID=3885
+[2014-01-26 04:14:49.000250|140126910605056] Set message type to:[1](REQUEST_MARKET_DATA)
+[2014-01-26 04:14:49.000404|140126910605056] Send Request Market Data...
+[2014-01-26 04:14:49.000545|140126910605056] Q# 0 ASSIGNED ID: SYM(AAPL):0.00 call:9, put:20
+[2014-01-26 04:14:49.003079|140126910605056] Q# 1 ASSIGNED ID: SYM(CNSI):0.00 call:12, put:23
+[2014-01-26 04:14:49.016314|140126910605056] Error id=-1, errorCode=2106, 
+-------------------- message from TWS --------------------
+	HMDS data farm connection is OK:ushmds
+----------------------------------------------------------
+[2014-01-26 04:14:49.340646|140126910605056] RCVD[STOCK]: [AAPL:BID ] price:[-1.00], for ticker=9 where Quote index: 0
+[2014-01-26 04:14:49.400016|140126910605056] RCVD[STOCK]: [AAPL:ASK ] price:[-1.00], for ticker=9 where Quote index: 0
+[2014-01-26 04:14:49.405126|140126910605056] RCVD[STOCK]: [AAPL:LAST] price:[506.00], for ticker=9 where Quote index: 0
+[2014-01-26 04:14:49.423298|140126910605056] RCVD[STOCK]: [CNSI:LAST] price:[36.84], for ticker=12 where Quote index: 1

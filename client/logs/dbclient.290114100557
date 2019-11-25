@@ -1,0 +1,551 @@
+[2014-01-29 10:05:58.053193|140384505620448] (./dbclient) is going to connect to [10.0.1.2]
+Open conifuration file: ./IBC.ini
+[Request]: Set is [CNSI-STK,AAPL-STK]
+[2014-01-29 10:05:58.063457|140384505620448] m_id for client# 1 is 1
+[2014-01-29 10:06:03.075798|140384505620448] Timer INFRA is started
+[2014-01-29 10:06:03.075917|140384505620448] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 20
+   Call ID        : 9
+   Symbol         : AAPL
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -797504866
+   use RTH        : 32685
+   tickType       : 233
+[2014-01-29 10:06:03.076113|140384505620448] DUMP accepted Quotes for #1
+   COMMAND    : REQUEST_MARKET_DATA
+   client id      : 1
+   Put ID         : 23
+   Call ID        : 12
+   Symbol         : CNSI
+   secType        : STK
+   exchange       : SMART
+   currency       : USD
+   multiplier     : 100
+   bar size       : -797504866
+   use RTH        : 32685
+   tickType       : 233
+[2014-01-29 10:06:03.076220|140384505620448] --------- END-------------
+[2014-01-29 10:06:03.076241|140384505620448] Q# 0, ASSIGNED ID: CALL: 9, PUT: 20
+[2014-01-29 10:06:03.076263|140384505620448] Q# 1, ASSIGNED ID: CALL: 12, PUT: 23
+[2014-01-29 10:06:03.080464|140384505620448] Writer side is opened, fd=6
+[2014-01-29 10:06:08.080725|140384505620448] Channel opened. Order's processing thread is being created
+[2014-01-29 10:06:13.088063|140384505620448] INFO: Allocated thread# -939526400
+[2014-01-29 10:06:18.101288|140384505620448] INFO: Ordering thread created #-950016256
+[2014-01-29 10:06:18.101433|140384505620448] Connecting to server: 10.0.1.2:4001, SID=1
+Received server verions from TWS: 67
+[2014-01-29 10:06:18.170284|140384505620448] APP is connected
+[2014-01-29 10:06:18.205405|140384361510656] Register thread# 140384361510656 once
+[2014-01-29 10:06:18.205520|140384361510656] nextValidId - invoked, ID=3898
+[2014-01-29 10:06:18.205601|140384361510656] Set message type to:[1](REQUEST_MARKET_DATA)
+[2014-01-29 10:06:18.205659|140384361510656] Error id=-1, errorCode=2106, 
+-------------------- message from TWS --------------------
+	HMDS data farm connection is OK:ushmds
+----------------------------------------------------------
+[2014-01-29 10:06:18.205690|140384361510656] Send Request Market Data...
+[2014-01-29 10:06:18.205715|140384361510656] Q# 0 ASSIGNED ID: SYM(AAPL):0.00 call:9, put:20
+[2014-01-29 10:06:18.214884|140384361510656] Q# 1 ASSIGNED ID: SYM(CNSI):0.00 call:12, put:23
+[2014-01-29 10:06:18.234988|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:18.246009|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:18.251107|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:18.295173|140384361510656] RCVD[STOCK]: [CNSI:BID ] price:[36.27], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:18.304297|140384361510656] RCVD[STOCK]: [CNSI:ASK ] price:[36.42], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:18.306456|140384361510656] RCVD[STOCK]: [CNSI:LAST] price:[36.27], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:19.137102|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:19.144596|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.82], for ticker=9 where Quote index: 0
+triggered: [1012]
+[2014-01-29 10:06:19.152039|140384351020800] Register thread# 140384351020800 once
+[2014-01-29 10:06:19.152120|140384351020800] Prepare to place a new Order ExtId=1012
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 1012 LIMIT 1]
+[2014-01-29 10:06:19.154595|140384361510656] RCVD[STOCK]: [CNSI:BID ] price:[36.28], for ticker=12 where Quote index: 1
+DBA::get_rX() - Retival failed.........retry=(5)
+Q IS [SELECT * FROM trade_data.orders_queue WHERE id = 1012 LIMIT 1]
+[2014-01-29 10:06:19.658631|140384351020800] Placing Order[3898:AAPL:SMART:STK:BUY:502.93:Qty(100)]
+[2014-01-29 10:06:19.669582|140384351020800] After update_record [s_id=1012,oid=3898]
+[2014-01-29 10:06:19.675546|140384351020800] Start Timer for QID = [3898]
+[2014-01-29 10:06:19.678806|140384351020800] Start timer TID=1, interval=30
+[2014-01-29 10:06:19.678879|140384351020800] Moving record to pending_orders....EID=1012
+move_record 1st: [INSERT INTO trade_data.pending_orders SELECT * FROM trade_data.orders_queue WHERE id=1012;]
+move_record 2nd: [DELETE FROM trade_data.orders_queue WHERE id=1012;]
+[2014-01-29 10:06:19.769640|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:19.855485|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.82], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:19.875987|140384361510656] execDetails() - invoked for:RId=[-1:AAPL:3898:20140129  10:06:19:BOT:100:502.93]
+Q IS [SELECT * FROM trade_data.pending_orders WHERE orderId = 3898 LIMIT 1]
+[2014-01-29 10:06:19.879195|140384361510656] in Comp_Order: OID=3898, size=39
+[2014-01-29 10:06:19.879492|140384361510656] Stop Timer Now.. ID=1
+[2014-01-29 10:06:19.879851|140384361510656] - In compleation function orderType is set to: BUY
+[2014-01-29 10:06:19.879942|140384361510656] Ticker ID in the record = 9
+[2014-01-29 10:06:19.911079|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.82], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:20.145708|140384361510656] RCVD[STOCK]: [CNSI:BID ] price:[36.27], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:20.519140|140384361510656] RCVD[STOCK]: [CNSI:BID ] price:[36.28], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:20.523229|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:20.526216|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:20.659739|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:20.909078|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:20.913077|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:21.167301|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:21.673733|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:22.942524|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:22.945668|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.81], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:22.948485|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:23.199295|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.82], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:23.209133|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:23.375157|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:23.389000|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:23.889197|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:24.499143|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:24.507915|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:24.648303|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.81], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:25.727947|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:25.770892|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:25.789272|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.95], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:26.424485|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:26.430232|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:27.658914|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:27.668616|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:27.905138|140384361510656] RCVD[STOCK]: [CNSI:ASK ] price:[36.41], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:28.175618|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.179249|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.182766|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.490060|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.494958|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.682238|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.685429|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.798204|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.803812|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.67], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.809846|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.882423|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.67], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.890037|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.934528|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:28.990896|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.035532|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.099468|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.721627|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.729593|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.64], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.879042|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:29.885589|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.63], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.130884|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.64], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.283529|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.286290|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.71], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.552333|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.790269|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.58], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:30.793804|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.55], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.000713|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.138832|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.388465|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.55], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.396300|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.525103|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.649983|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.64], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.657120|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.51], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:31.931657|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.51], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:32.189068|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:32.199578|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:32.794529|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.51], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:32.818859|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:33.072558|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:33.326814|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:33.718848|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:33.723668|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.55], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.149660|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.157973|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.164475|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.261473|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.267474|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.514696|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.659506|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.71], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:34.945252|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:35.155905|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:35.405810|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:35.659108|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:35.912153|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:36.168962|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:36.421299|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:36.676942|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:36.925195|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:36.931818|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.71], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.021502|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.039282|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.044933|140384361510656] RCVD[STOCK]: [CNSI:LAST] price:[36.41], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:38.048024|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.87], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.286501|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.540447|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.545523|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.549228|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:38.795243|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.66], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:39.480814|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:39.739268|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:39.753426|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:39.987999|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:39.998557|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:40.249179|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:40.255974|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.51], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:40.508597|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:40.778672|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:41.258910|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:41.509155|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:42.014771|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.61], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:42.073819|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:42.078880|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.67], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:42.310954|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:42.597068|140384361510656] RCVD[STOCK]: [CNSI:ASK ] price:[36.43], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:43.321536|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.67], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:43.578897|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:43.831970|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:43.836993|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.086036|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.61], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.338521|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.827394|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.832811|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.836657|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:44.877893|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.53], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:45.588578|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:46.368392|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:46.378746|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.62], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:46.505887|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.64], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:46.763814|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:47.018515|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.61], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:47.418990|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:48.551901|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.308549|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.318204|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.67], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.329589|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.563502|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.568084|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.813857|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:49.819168|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.048681|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.057806|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.304850|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.569590|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.685287|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:50.823804|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:51.318068|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:51.635873|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:52.588244|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:52.655447|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:53.458689|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:53.714957|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:53.717667|140384361510656] RCVD[STOCK]: [CNSI:BID ] price:[36.30], for ticker=12 where Quote index: 1
+[2014-01-29 10:06:53.724841|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:53.987675|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:53.990872|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:54.219721|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:54.742801|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:55.222263|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:55.251997|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:56.016926|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:56.268159|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:56.777846|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:56.782429|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.95], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.030195|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.95], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.289051|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.293514|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.57], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.298593|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.544289|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.55], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.548400|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:57.798930|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:58.056527|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.58], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:58.064934|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.56], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:58.551051|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.79], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:58.853314|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:58.926076|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:06:59.698067|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:00.715855|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.043513|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.069096|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.095834|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.100615|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.104261|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.110005|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.113100|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.383622|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:02.439091|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:03.144997|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:03.395684|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:03.670918|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.73], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:03.866023|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:03.904223|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:04.158528|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.61], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:04.413648|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:05.033595|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:05.166049|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:05.171265|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:06.347720|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:06.596884|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:06.600877|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.63], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:06.606240|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:06.734835|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:07.077998|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.79], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:07.080642|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:07.178987|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:08.198103|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:08.714696|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:08.717693|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:08.968633|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:09.443929|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.64], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:09.997169|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:10.250757|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:10.515436|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:11.379286|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.63], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:11.887698|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:11.892745|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:12.257827|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.66], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:12.764287|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.66], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.017460|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.268712|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.68], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.275822|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.66], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.527481|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.787624|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:13.793689|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:14.036746|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:14.286666|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:14.297021|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:14.917981|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:15.217628|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:15.817109|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:16.066839|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:16.326750|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:16.578098|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:17.572304|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:17.577143|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:17.667067|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:17.705457|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.114129|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.546997|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.556850|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.631132|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.01], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.637131|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.02], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.887949|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:18.897383|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.11], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:19.191077|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.03], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:19.535005|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.11], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:19.543851|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:19.785292|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:20.293089|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.05], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:20.557908|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:20.567284|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.15], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:20.797025|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.15], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:21.363287|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:21.367265|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:21.637767|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.01], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:21.818639|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:22.326510|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.14], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:22.331889|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.15], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:22.581733|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:22.586817|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:22.591830|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:23.108191|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:23.432252|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:23.442702|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:23.947034|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:24.447534|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.231449|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.248552|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.636399|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.640644|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.971245|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:25.998934|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:26.226455|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:26.556659|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:26.734035|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:26.985317|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:27.473070|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:27.746609|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:27.997846|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:28.398072|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.84], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:28.404611|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:28.501514|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:28.511326|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:28.836635|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:29.081490|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:29.656319|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:29.938448|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.547912|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.580052|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.592898|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.599103|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.789096|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:30.793529|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:31.467832|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:31.778237|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:31.963919|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:33.006641|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:33.293112|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:33.928101|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:34.236582|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:34.243122|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:34.413091|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:35.965665|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:35.976053|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.72], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:36.210277|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:36.596687|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:37.307123|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.72], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:37.927003|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.104811|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.537035|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.72], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.605334|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.611209|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.857542|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:38.863037|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:39.457030|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:39.466021|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:39.869643|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:40.057224|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.90], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:40.177586|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.76], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.223187|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.91], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.235661|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.243417|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.611435|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.866482|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:42.874112|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:43.125859|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.77], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:43.132264|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:43.666693|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.481507|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.487483|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[502.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.733116|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.741119|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.14], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.989077|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.01], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:44.995515|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:45.257730|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:45.278553|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:45.297721|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.13], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:46.216746|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:46.225907|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:46.263489|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:47.003525|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.11], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:47.763593|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.02], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:48.056010|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.11], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:49.524200|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:50.030806|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.09], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:50.036278|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.10], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:50.547081|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.10], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:50.554201|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:51.295650|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:51.303456|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.92], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:51.745209|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.06], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:52.357683|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[502.93], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:52.375404|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.10], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:52.558494|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:53.001183|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:53.256412|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:54.575591|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.01], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:54.582319|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.190167|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[502.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.198937|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.11], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.433472|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.10], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.445535|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.699241|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.703699|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.05], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.708222|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:55.947083|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.356422|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.12], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.364611|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.369722|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.29], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.456919|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.30], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.461524|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.20], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.468784|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.30], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.702030|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.39], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.705870|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.39], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.965514|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.46], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.975084|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.37], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:56.978147|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.46], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.123073|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.38], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.379156|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.50], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.382218|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.48], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.387429|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.58], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.629859|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.52], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.638145|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.47], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.886779|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.59], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:57.893670|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.133631|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.141481|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.48], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.145574|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.57], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.506040|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.57], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.640163|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.56], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.896168|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.57], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:58.904147|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.60], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:59.155924|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.59], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:59.162834|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.37], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:59.666434|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:59.672644|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.54], for ticker=9 where Quote index: 0
+[2014-01-29 10:07:59.677876|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:00.319743|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.65], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:00.585704|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:00.597297|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.74], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:00.826137|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:00.830799|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.086772|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.095229|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.103007|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.83], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.575671|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.584671|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.592957|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.82], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.845629|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.956020|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:01.963252|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.99], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.215689|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.220621|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.476146|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.498949|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.736750|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.741561|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.85], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:02.744703|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.20], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:03.219571|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:03.227053|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:03.472185|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.08], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:03.478717|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.08], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:03.976016|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.13], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.357106|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.372931|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.499015|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.15], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.709605|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.14], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.723135|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:04.864954|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.111746|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.116278|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.89], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.121627|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.19], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.236968|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.14], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.244094|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.742070|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:05.961517|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.96], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:06.066777|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.98], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:06.070083|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.97], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:06.735043|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.13], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.003553|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.01], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.248497|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.02], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.252552|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.275120|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.895846|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.04], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:07.904136|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.13], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:08.149135|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.13], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:08.152392|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.03], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:08.637131|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:08.645042|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:08.766069|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.18], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:09.132678|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.09], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:09.137197|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.155425|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.158776|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[504.00], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.404916|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[504.16], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.575992|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.86], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.585172|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.82], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.594000|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.95], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:10.819849|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.78], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.073177|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[504.17], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.076070|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.70], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.325375|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.80], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.584567|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.72], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.584898|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.835183|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.88], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:11.841286|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.81], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.086138|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.95], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.092071|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.75], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.178836|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.87], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.184871|140384361510656] RCVD[STOCK]: [AAPL:ASK ] price:[503.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.449669|140384361510656] RCVD[STOCK]: [AAPL:LAST] price:[503.94], for ticker=9 where Quote index: 0
+[2014-01-29 10:08:12.830845|140384361510656] RCVD[STOCK]: [AAPL:BID ] price:[503.70], for ticker=9 where Quote index: 0
